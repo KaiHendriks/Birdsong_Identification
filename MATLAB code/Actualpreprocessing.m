@@ -140,12 +140,13 @@ colormap bone;
 ma3 = zeros (rows,columns);
 for c = 1:columns
     for r = 1:rows
-        if ma2(r,c)== 60
+        if ma2(r,c) == 60
             for mc = -1 :1
                 for mr = -1 :1
                     if (r+mr < 1) || (c+mc < 1) || (r+mr > rows) || (c+mc > columns);
-                    end
+                    else
                     ma3(r+mr,c+mc) = 60;
+                    end
                 end
             end
         end
