@@ -162,9 +162,18 @@ figure (2)
 image(ma3);
 colormap bone;
 
-%find phonemes
+%remove noises
+K = mat2gray(ma3);
+min_image = min(K(:));
 
+max_image = 1;
 
+imwrite(K,'phoneme.png')
+BW = imread( 'phoneme.png');
 
+BW2 = bwareaopen(BW,100);
+figure
+imshow(BW2);
+colormap bone;
 end
 
