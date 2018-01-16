@@ -223,7 +223,9 @@ colormap bone;
 %%
 %phoneme extraction colormap bone;
 image = int64(triclipped);
-CC =(bwconncomp(image));
+BW2 = bwareaopen(image,100);
+
+CC =(bwconncomp(BW2));
 for i=1:(length(CC.PixelIdxList))
     indexarray = int64(cell2mat(CC.PixelIdxList(1,i)));
     positionarray =int64 (zeros(2,length(CC.PixelIdxList(1,i))));
