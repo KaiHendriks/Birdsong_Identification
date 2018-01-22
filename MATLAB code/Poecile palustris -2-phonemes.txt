@@ -1,0 +1,245 @@
+ 0.0000          1.0726          background 
+ 1.0726          1.2113          phoneme 1 
+ 1.2113          1.2807          background 
+ 1.2807          1.4141          phoneme 2 
+ 1.4141          1.4781          background 
+ 1.4781          1.5902          phoneme 3 
+ 1.5902          1.6382          background 
+ 1.6382          1.7823          phoneme 4 
+ 1.7823          1.8463          background 
+ 1.8463          1.9530          phoneme 5 
+ 1.9530          2.0224          background 
+ 2.0224          2.1664          phoneme 6 
+ 2.1664          2.2358          background 
+ 2.2358          2.3692          phoneme 7 
+ 2.3692          3.8473          background 
+ 3.8473          3.8953          phoneme 8 
+ 3.8953          3.9807          background 
+ 3.9807          4.0448          phoneme 9 
+ 4.0448          4.0981          background 
+ 4.0981          4.1515          phoneme 10 
+ 4.1515          4.2155          background 
+ 4.2155          4.2742          phoneme 11 
+ 4.2742          4.3222          background 
+ 4.3222          4.3756          phoneme 12 
+ 4.3756          4.4396          background 
+ 4.4396          4.4983          phoneme 13 
+ 4.4983          4.5517          background 
+ 4.5517          4.6050          phoneme 14 
+ 4.6050          4.6744          background 
+ 4.6744          4.7331          phoneme 15 
+ 4.7331          4.7865          background 
+ 4.7865          4.8398          phoneme 16 
+ 4.8398          4.9092          background 
+ 4.9092          4.9786          phoneme 17 
+ 4.9786          5.0159          background 
+ 5.0159          5.0746          phoneme 18 
+ 5.0746          7.2998          background 
+ 7.2998          7.4225          phoneme 19 
+ 7.4225          7.4919          background 
+ 7.4919          7.6253          phoneme 20 
+ 7.6253          7.6946          background 
+ 7.6946          7.8227          phoneme 21 
+ 7.8227          7.8494          background 
+ 7.8494          7.9774          phoneme 22 
+ 7.9774          8.0522          background 
+ 8.0522          8.1642          phoneme 23 
+ 8.1642          8.2069          background 
+ 8.2069          8.2763          phoneme 24 
+ 8.2763          8.3456          background 
+ 8.3456          8.4470          phoneme 25 
+ 8.4470          8.5057          background 
+ 8.5057          8.5644          phoneme 26 
+ 8.5644          8.6284          background 
+ 8.6284          8.7032          phoneme 27 
+ 8.7032          8.7458          background 
+ 8.7458          8.7992          phoneme 28 
+ 8.7992          8.8686          background 
+ 8.8686          8.9326          phoneme 29 
+ 8.9326          8.9806          background 
+ 8.9806          9.0340          phoneme 30 
+ 9.0340          11.6487          background 
+ 11.6487          11.7074          phoneme 31 
+ 11.7074          11.7767          background 
+ 11.7767          11.8408          phoneme 32 
+ 11.8408          11.8888          background 
+ 11.8888          11.9422          phoneme 33 
+ 11.9422          12.0062          background 
+ 12.0062          12.0702          phoneme 34 
+ 12.0702          12.1182          background 
+ 12.1182          12.1716          phoneme 35 
+ 12.1716          12.2303          background 
+ 12.2303          12.2890          phoneme 36 
+ 12.2890          12.3370          background 
+ 12.3370          12.3904          phoneme 37 
+ 12.3904          12.4544          background 
+ 12.4544          12.5185          phoneme 38 
+ 12.5185          12.5665          background 
+ 12.5665          12.6198          phoneme 39 
+ 12.6198          12.6839          background 
+ 12.6839          12.7426          phoneme 40 
+ 12.7426          12.7959          background 
+ 12.7959          12.8493          phoneme 41 
+ 12.8493          15.1011          background 
+ 15.1011          15.1491          phoneme 42 
+ 15.1491          15.2238          background 
+ 15.2238          15.2825          phoneme 43 
+ 15.2825          15.3359          background 
+ 15.3359          15.3839          phoneme 44 
+ 15.3839          15.4480          background 
+ 15.4480          15.5067          phoneme 45 
+ 15.5067          15.5547          background 
+ 15.5547          15.6134          phoneme 46 
+ 15.6134          15.6721          background 
+ 15.6721          15.7361          phoneme 47 
+ 15.7361          15.7788          background 
+ 15.7788          15.8428          phoneme 48 
+ 15.8428          15.8962          background 
+ 15.8962          15.9656          phoneme 49 
+ 15.9656          16.0029          background 
+ 16.0029          16.0669          phoneme 50 
+ 16.0669          16.1310          background 
+ 16.1310          16.1950          phoneme 51 
+ 16.1950          16.2377          background 
+ 16.2377          16.2964          phoneme 52 
+ 16.2964          16.3551          background 
+ 16.3551          16.4138          phoneme 53 
+ 16.4138          16.4618          background 
+ 16.4618          16.5205          phoneme 54 
+ 16.5205          16.5845          background 
+ 16.5845          16.6593          phoneme 55 
+ 16.6593          16.7019          background 
+ 16.7019          16.7606          phoneme 56 
+ 16.7606          16.8300          background 
+ 16.8300          16.8887          phoneme 57 
+ 16.8887          16.9474          background 
+ 16.9474          17.0008          phoneme 58 
+ 17.0008          17.0808          background 
+ 17.0808          17.1502          phoneme 59 
+ 17.1502          19.0978          background 
+ 19.0978          19.1459          phoneme 60 
+ 19.1459          19.2206          background 
+ 19.2206          19.2793          phoneme 61 
+ 19.2793          19.3273          background 
+ 19.3273          19.3807          phoneme 62 
+ 19.3807          19.4447          background 
+ 19.4447          19.5141          phoneme 63 
+ 19.5141          19.5567          background 
+ 19.5567          19.6154          phoneme 64 
+ 19.6154          19.6688          background 
+ 19.6688          19.7328          phoneme 65 
+ 19.7328          19.7809          background 
+ 19.7809          19.8396          phoneme 66 
+ 19.8396          19.8929          background 
+ 19.8929          19.9623          phoneme 67 
+ 19.9623          19.9996          background 
+ 19.9996          20.0583          phoneme 68 
+ 20.0583          20.1170          background 
+ 20.1170          20.1864          phoneme 69 
+ 20.1864          20.2291          background 
+ 20.2291          20.2878          phoneme 70 
+ 20.2878          20.3518          background 
+ 20.3518          20.4425          phoneme 71 
+ 20.4425          20.4692          background 
+ 20.4692          20.5226          phoneme 72 
+ 20.5226          20.5866          background 
+ 20.5866          20.6506          phoneme 73 
+ 20.6506          20.7040          background 
+ 20.7040          20.7627          phoneme 74 
+ 20.7627          20.8267          background 
+ 20.8267          20.8908          phoneme 75 
+ 20.8908          20.9441          background 
+ 20.9441          21.0028          phoneme 76 
+ 21.0028          23.9430          background 
+ 23.9430          23.9964          phoneme 77 
+ 23.9964          24.0657          background 
+ 24.0657          24.1244          phoneme 78 
+ 24.1244          24.1778          background 
+ 24.1778          24.2312          phoneme 79 
+ 24.2312          24.2952          background 
+ 24.2952          24.3539          phoneme 80 
+ 24.3539          24.4019          background 
+ 24.4019          24.4606          phoneme 81 
+ 24.4606          24.5193          background 
+ 24.5193          24.5833          phoneme 82 
+ 24.5833          24.6314          background 
+ 24.6314          24.6847          phoneme 83 
+ 24.6847          24.7434          background 
+ 24.7434          24.8181          phoneme 84 
+ 24.8181          24.8555          background 
+ 24.8555          24.9195          phoneme 85 
+ 24.9195          24.9729          background 
+ 24.9729          25.0422          phoneme 86 
+ 25.0422          25.0849          background 
+ 25.0849          25.1436          phoneme 87 
+ 25.1436          25.2023          background 
+ 25.2023          25.2664          phoneme 88 
+ 25.2664          25.3144          background 
+ 25.3144          25.3731          phoneme 89 
+ 25.3731          25.4371          background 
+ 25.4371          25.5011          phoneme 90 
+ 25.5011          25.5492          background 
+ 25.5492          25.6079          phoneme 91 
+ 25.6079          25.6826          background 
+ 25.6826          25.7413          phoneme 92 
+ 25.7413          25.7946          background 
+ 25.7946          25.8533          phoneme 93 
+ 25.8533          29.2364          background 
+ 29.2364          29.2898          phoneme 94 
+ 29.2898          29.3591          background 
+ 29.3591          29.4232          phoneme 95 
+ 29.4232          29.4659          background 
+ 29.4659          29.5192          phoneme 96 
+ 29.5192          29.5832          background 
+ 29.5832          29.6419          phoneme 97 
+ 29.6419          29.6900          background 
+ 29.6900          29.7487          phoneme 98 
+ 29.7487          29.8074          background 
+ 29.8074          29.8874          phoneme 99 
+ 29.8874          29.9141          background 
+ 29.9141          29.9728          phoneme 100 
+ 29.9728          30.0315          background 
+ 30.0315          30.1062          phoneme 101 
+ 30.1062          30.1435          background 
+ 30.1435          30.2022          phoneme 102 
+ 30.2022          30.2609          background 
+ 30.2609          30.3356          phoneme 103 
+ 30.3356          30.3730          background 
+ 30.3730          30.4263          phoneme 104 
+ 30.4263          30.4904          background 
+ 30.4904          30.5544          phoneme 105 
+ 30.5544          30.6078          background 
+ 30.6078          30.6665          phoneme 106 
+ 30.6665          32.6995          background 
+ 32.6995          32.7422          phoneme 107 
+ 32.7422          32.8223          background 
+ 32.8223          32.8809          phoneme 108 
+ 32.8809          32.9290          background 
+ 32.9290          32.9823          phoneme 109 
+ 32.9823          33.0464          background 
+ 33.0464          33.1051          phoneme 110 
+ 33.1051          33.1531          background 
+ 33.1531          33.2118          phoneme 111 
+ 33.2118          33.2758          background 
+ 33.2758          33.3345          phoneme 112 
+ 33.3345          33.3825          background 
+ 33.3825          33.4412          phoneme 113 
+ 33.4412          33.4999          background 
+ 33.4999          33.5640          phoneme 114 
+ 33.5640          33.6067          background 
+ 33.6067          33.6707          phoneme 115 
+ 33.6707          33.7294          background 
+ 33.7294          33.8094          phoneme 116 
+ 33.8094          33.8414          background 
+ 33.8414          33.9001          phoneme 117 
+ 33.9001          33.9642          background 
+ 33.9642          34.0442          phoneme 118 
+ 34.0442          34.0762          background 
+ 34.0762          34.1349          phoneme 119 
+ 34.1349          34.1936          background 
+ 34.1936          34.2790          phoneme 120 
+ 34.2790          34.3110          background 
+ 34.3110          34.3697          phoneme 121 
+ 34.3697          34.4711          background 
+ 34.4711          34.5298          phoneme 122 
+ 34.5298          36.2160          background 
