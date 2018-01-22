@@ -1,7 +1,7 @@
 import jdk.nashorn.internal.scripts.JO;
 
 import java.awt.*;
-import java.io.File;
+import java.io.*;
 
 import javax.swing.*;
 import javax.swing.JFrame;
@@ -78,33 +78,54 @@ import javax.swing.JFrame;
 
 
     public static void main(String[] args) {
-        Boolean again = true;
-            while(again){  //Loop allows for multiple folders to be looked one after another
+            String TXTFILE = null;
+            Boolean again = true;
+            String NameOfFile;
+        while(again){  //Loop allows for multiple folders to be looked one after another
             String directoryPath = JOptionPane.showInputDialog(null,"Here, you will choose whether the picture is a phoneme. Please input the file directory", "");
             if (directoryPath == null){System.exit(0);}
 
                File spectro = new File(directoryPath);
                 File [] files1 = spectro.listFiles();
                 for (int i = 0; i < files1.length; i++){
-                    String NameOfFile = files1[i].getName();
-//                    System.out.println(NameOfFile);
-                    if (NameOfFile.equals("Spectrogram")) {
+                    NameOfFile = files1[i].getName();
+                    if (NameOfFile.contains(".txt")){TXTFILE = directoryPath + "\\" + NameOfFile;}
+                }
 
-                        PictureInFrame spectrogram = new PictureInFrame(files1[i].toString());
-                        spectrogram.setVisible(true);
 
-                    }}
+//                for (int i = 0; i < files1.length; i++){
+//                    String NameOfFile = files1[i].getName();
+////                    System.out.println(NameOfFile);
+//
+//                    if (NameOfFile.equals("Spectrogram")) {
+//
+//                        PictureInFrame spectrogram = new PictureInFrame(files1[i].toString());
+//                        spectrogram.setVisible(true);
+//
+//                    }}
 
                         File path = new File(directoryPath);
 
         File [] files = path.listFiles();
         for (int i = 0; i < files.length; i++){
+
+//file reading
+
+//            PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter("c:\\book.temp")));
             if (files[i].isFile()){ //this line weeds out other directories/folders
+                NameOfFile = files1[i].getName();
 
+                if (!NameOfFile.equals("spectrogram.png")|| !NameOfFile.contains(".txt")){
+                    String number = NameOfFile.substring(NameOfFile.length()-8,NameOfFile.length()-4);
+                    File log= new File(TXTFILE);
+                    String search = "phoneme "+ number;  // <- changed to work with String.replaceAll()
+                    System.out.println(search);
+                    String replacement = "background";
 
-
-                PictureInFrame picture = new PictureInFrame(files[i].toString());
+                    PictureInFrame picture = new PictureInFrame(files[i].toString());
                 picture.setVisible(true);
+
+
 
 
 
@@ -112,7 +133,27 @@ import javax.swing.JFrame;
                 int isPhoneme= JOptionPane.showConfirmDialog(null,"Is this a phoneme?",files[i].getName(), JOptionPane.YES_NO_OPTION);
 
                 if(isPhoneme==JOptionPane.CLOSED_OPTION){System.exit(0);}
-                if (isPhoneme==1){ try{
+                if (isPhoneme==1){
+
+                    try {
+                        FileReader fr = new FileReader(log);
+                        String s;
+                        BufferedReader br = new BufferedReader(fr);
+
+                        while ((s = br.readLine()) != null) {
+                            s.replaceAll(search, replacement);
+                            // do something with the resulting line
+                        }
+                    }catch(Exception e){
+
+                        e.printStackTrace();
+
+                    }
+
+                    try{
+
+
+
 
                     files[i].delete();
 
@@ -129,6 +170,7 @@ import javax.swing.JFrame;
 
 
                 picture.dispose();
+            }
             }
         }
 
