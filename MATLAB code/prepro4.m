@@ -328,12 +328,12 @@ for i=2:2*length(xmax)+1
     end
 
 end
- 
-formatSpec = '%s-specie.txt';
-fid = fopen(sprintf(formatSpec,name),'w');
-for i=1:length(xmax)*2+1
-    fprintf(fid,'%4.4f      %4.4f      %s \r\n', timematrix{i,:});
-end
+%  
+% formatSpec = '%s-specie.txt';
+% fid = fopen(sprintf(formatSpec,name),'w');
+% for i=1:length(xmax)*2+1
+%     fprintf(fid,'%4.4f      %4.4f      %s \r\n', timematrix{i,:});
+% end
 formatSpec = 'phoneme %d';
 
 for i=1:length(xmax)
