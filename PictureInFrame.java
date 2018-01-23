@@ -67,10 +67,22 @@ public class PictureInFrame extends JFrame {
 
         }
     }
+//recursion for having proper digits
+    public static String zeros (String n) {
+
+        if (n.length()== 4) return n;
+        else{
+            n = "0"+n;
+        }
+        return zeros(n);
+    }
 
 
     public static void main(String[] args) {
         String TXTFILE = null;
+        String TXTFILE2 = null;
+        String CNTFILE = null;
+        String Filename = null;
         Boolean again = true;
         String NameOfFile;
         while (again) {  //Loop allows for multiple folders to be looked one after another
@@ -86,10 +98,28 @@ public class PictureInFrame extends JFrame {
             File[] files1 = spectro.listFiles(); //This loop will find the text file and assign the name to TXTFILE for later use
             for (int i = 0; i < files1.length; i++) {
                 NameOfFile = files1[i].getName();
-                if (NameOfFile.contains(".txt")) {
+                if (NameOfFile.contains("phonemes.txt")) {
+                    Filename = NameOfFile;
+                    TXTFILE2 = directoryPath +"\\"+NameOfFile.substring(0,NameOfFile.length()-12)+"specie.txt";
+                    System.out.println(TXTFILE2);
                     TXTFILE = directoryPath + "\\" + NameOfFile;
+                    CNTFILE = directoryPath + "\\ Accuracy.txt";
                 }
             }
+            // Create a Phoneme counter
+            File count = new File(CNTFILE);
+            try {
+                PrintWriter cw = new PrintWriter(count);
+                cw.println("Total Phonemes     : 0000");
+                cw.println("Correct Phonemes   : 0000");
+                cw.println("Incorrect Phonemes : 0000");
+                cw.println("Multiple Phonemes  : 0000");
+                cw.close();
+                }catch (Exception e) {
+                e.printStackTrace();
+            }
+
+            File log = new File(TXTFILE);
 
 
             //Phoneme recognition part
@@ -104,16 +134,15 @@ public class PictureInFrame extends JFrame {
                     NameOfFile = files1[i].getName();
 
                     //prevents taking spectrogram and other types of files
-                    if ((!NameOfFile.contains("spectrogram") && !NameOfFile.contains(".txt") || !NameOfFile.contains(".png"))) {
+                    if (((!NameOfFile.contains("spectrogram")) && !NameOfFile.contains("Accuracy1`") && !NameOfFile.contains(".txt")) && NameOfFile.contains(".png")) {
 
                         //this will take the phoneme number
                         String number = NameOfFile.substring(NameOfFile.length() - 8, NameOfFile.length() - 4);
-                        File log = new File(TXTFILE);
 
 
                         //Search parameters for later search and replacement in text file
                         String search = "phoneme " + number;
-                        
+
                         String replacement = "background";
 
 
@@ -124,14 +153,85 @@ public class PictureInFrame extends JFrame {
 
                         //This asks to user to choose whether the picture shown is a phoneme
                         int isPhoneme = JOptionPane.showConfirmDialog(null, "Is this a phoneme?",
-                                files[i].getName(), JOptionPane.YES_NO_OPTION);
+                                files[i].getName(), JOptionPane.YES_NO_CANCEL_OPTION);
+                        UIManager.put("OptionPane.cancelButtonText", "Multiple");
                         String s = null, putdata = null;
 
                         if (isPhoneme == JOptionPane.CLOSED_OPTION) {
                             System.exit(0);
                         }
 
+                        if (isPhoneme == 0) {
+                            try {
+                                FileReader cr = new FileReader(count);
+
+                                String totalStr = "";
+                                try (BufferedReader br = new BufferedReader(cr)) {
+
+                                    while ((s = br.readLine()) != null) {
+                                        totalStr += (s + "\n");
+                                    }
+                                    String[] lines = totalStr.split("\n");
+                                    String tot = lines[0].substring(21, 25);
+                                    String cor = lines[1].substring(21, 25);
+                                    System.out.println(tot);
+                                    int foo = Integer.parseInt(tot) + 1;
+                                    int foo2 = Integer.parseInt(cor) + 1;
+                                    String tot1 = Integer.toString(foo);
+                                    tot1 = zeros(tot1);
+                                    String cor1 = Integer.toString(foo2);
+                                    cor1 = zeros(cor1);
+                                    lines[0] = lines[0].replaceAll(tot, tot1);
+                                    lines[1] = lines[1].replaceAll(cor, cor1);
+                                    PrintWriter fw = new PrintWriter(count);
+                                    for (int j = 0; j < lines.length; j++) {
+                                        fw.println(lines[j]);
+//                                        System.out.println(lines[j]);
+                                    }
+                                    fw.close();
+
+
+                                }
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+
+                        }
+
                         if (isPhoneme == 1) {
+                            try {
+                                FileReader cr = new FileReader(count);
+
+                                String totalStr = "";
+                                try (BufferedReader br = new BufferedReader(cr)) {
+
+                                    while ((s = br.readLine()) != null) {
+                                        totalStr += (s + "\n");
+                                    }
+                                    String[] lines = totalStr.split("\n");
+                                    String tot = lines[0].substring(21, 25);
+                                    String cor = lines[2].substring(21, 25);
+                                    System.out.println(tot);
+                                    int foo = Integer.parseInt(tot) + 1;
+                                    int foo2 = Integer.parseInt(cor) + 1;
+                                    String tot1 = Integer.toString(foo);
+                                    tot1 = zeros(tot1);
+                                    String cor1 = Integer.toString(foo2);
+                                    cor1 = zeros(cor1);
+                                    lines[0] = lines[0].replaceAll(tot, tot1);
+                                    lines[2] = lines[2].replaceAll(cor, cor1);
+                                    PrintWriter fw = new PrintWriter(count);
+                                    for (int j = 0; j < lines.length; j++) {
+                                        fw.println(lines[j]);
+//                                        System.out.println(lines[j]);
+                                    }
+                                    fw.close();
+
+
+                                }
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
 
 
 //THis will override the text file in case the phoneme is a background noise
@@ -178,6 +278,41 @@ public class PictureInFrame extends JFrame {
 
                             }
                         }
+                        if (isPhoneme == 2) {
+                            try {
+                                FileReader cr = new FileReader(count);
+
+                                String totalStr = "";
+                                try (BufferedReader br = new BufferedReader(cr)) {
+
+                                    while ((s = br.readLine()) != null) {
+                                        totalStr += (s + "\n");
+                                    }
+                                    String[] lines = totalStr.split("\n");
+                                    String tot = lines[0].substring(21, 25);
+                                    String cor = lines[3].substring(21, 25);
+                                    System.out.println(tot);
+                                    int foo = Integer.parseInt(tot) + 1;
+                                    int foo2 = Integer.parseInt(cor) + 1;
+                                    String tot1 = Integer.toString(foo);
+                                    tot1 = zeros(tot1);
+                                    String cor1 = Integer.toString(foo2);
+                                    cor1 = zeros(cor1);
+                                    lines[0] = lines[0].replaceAll(tot, tot1);
+                                    lines[3] = lines[3].replaceAll(cor, cor1);
+                                    PrintWriter fw = new PrintWriter(count);
+                                    for (int j = 0; j < lines.length; j++) {
+                                        fw.println(lines[j]);
+//                                        System.out.println(lines[j]);
+                                    }
+                                    fw.close();
+
+
+                                }
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                        }
 
 
                         picture.dispose();
@@ -185,6 +320,34 @@ public class PictureInFrame extends JFrame {
                 }
             }
 
+            try{
+                File log2 = new File (TXTFILE2);
+
+                FileReader cr = new FileReader(log);
+                String s;
+                String totalStr = "";
+                try (BufferedReader br = new BufferedReader( cr)) {
+
+
+                    while ((s = br.readLine()) != null) {
+                        totalStr += (s + "\n");
+                    }
+                    String[] lines = totalStr.split("\n");
+                    for (int i= 0;i<lines.length;i++){
+                        if (lines[i].contains("phoneme")){
+                            lines[i]=lines[i].substring(0,lines[i].length()-13)+ Filename.substring(0,Filename.length()-15);
+                        }
+                    }
+
+                    PrintWriter fw = new PrintWriter(log2);
+                    for (int j = 0; j < lines.length; j++) {
+                        fw.println(lines[j]);
+                    }
+                    fw.close();
+
+                }}catch (Exception e) {
+                e.printStackTrace();
+            }
 
             //This asks the user if he/she wants to continue with another folder
             int continueLoop = JOptionPane.showConfirmDialog(null, "Do you want to do another folder?", "Quit?", JOptionPane.YES_NO_OPTION);
@@ -192,6 +355,9 @@ public class PictureInFrame extends JFrame {
                 again = false;
             }
 
+
+
         }
     }
+
 }
