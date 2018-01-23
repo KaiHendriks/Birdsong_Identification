@@ -278,6 +278,8 @@ end
     end
    
     positionarray = positionarray (~cellfun('isempty',positionarray));
+    
+    mkdir(name) ;
     for i=1:length(xmax)
         while isempty(positionarray{1,i})
             if i==length(xmax)
@@ -299,12 +301,12 @@ end
          end
     end
     
-    formatSpec = '%s - phoneme %4.0d.png';
-    filename = sprintf(formatSpec,name,i);
+    formatSpec = '%s/%s - phoneme %04d.png';
+    filename = sprintf(formatSpec,name,name,i);
     imwrite(phoneme,filename);
     end
     
-formatSpec = 'spectrogram.png';
+formatSpec = '%s/spectrogram.png';
 filename = sprintf(formatSpec,name);
 imwrite(clipped,filename);
 
@@ -340,9 +342,10 @@ for i=1:length(xmax)
     fid = sprintf(formatSpec,i);
     timematrix{2*i,3} = fid;
 end
-formatSpec = '%s-phonemes.txt';
-fid = fopen(sprintf(formatSpec,name),'w');
+formatSpec = '%s/%s-phonemes.txt';
+fid = fopen(sprintf(formatSpec,name,name),'w');
 for i=1:length(xmax)*2+1
         fprintf(fid,' %8.4f          %8.4f          %s \r\n', timematrix{i,:});
 end
+fclose(fid);
 end
