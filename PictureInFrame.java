@@ -67,7 +67,7 @@ public class PictureInFrame extends JFrame {
 
         }
     }
-//recursion for having proper digits
+    //recursion for having proper digits
     public static String zeros (String n) {
 
         if (n.length()== 4) return n;
@@ -115,7 +115,7 @@ public class PictureInFrame extends JFrame {
                 cw.println("Incorrect Phonemes : 0000");
                 cw.println("Multiple Phonemes  : 0000");
                 cw.close();
-                }catch (Exception e) {
+            }catch (Exception e) {
                 e.printStackTrace();
             }
 
@@ -130,11 +130,11 @@ public class PictureInFrame extends JFrame {
             for (int i = 0; i < files.length; i++) {
 
 
-                if (files[i].isFile()) { //this line weeds out other directories/folders
-                    NameOfFile = files1[i].getName();
+
+                    NameOfFile = files[i].getName();
 
                     //prevents taking spectrogram and other types of files
-                    if (((!NameOfFile.contains("spectrogram")) && !NameOfFile.contains("Accuracy1`") && !NameOfFile.contains(".txt")) && NameOfFile.contains(".png")) {
+                    if (((!NameOfFile.contains("spectrogram")) && !NameOfFile.contains("Accuracy") && !NameOfFile.contains(".txt")) && NameOfFile.contains(".png")) {
 
                         //this will take the phoneme number
                         String number = NameOfFile.substring(NameOfFile.length() - 8, NameOfFile.length() - 4);
@@ -317,7 +317,7 @@ public class PictureInFrame extends JFrame {
 
                         picture.dispose();
                     }
-                }
+
             }
 
             try{
