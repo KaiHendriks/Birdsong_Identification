@@ -306,7 +306,7 @@ public class PictureInFrame extends JFrame {
                                 String[] lines = totalStr.split("\n");
                                 for (int j= 0;j<lines.length;j++){
                                     if (lines[j].contains(search)){
-                                        lines[j]=lines[j].substring(0,lines[j].length()-13)+ "phoneme "+NameOfPhoneme.toUpperCase();
+                                        lines[j]=lines[j].substring(0,lines[j].length()-13)+ species+ " phoneme "+NameOfPhoneme.toUpperCase();
                                     }
                                 }
 
@@ -381,7 +381,7 @@ public class PictureInFrame extends JFrame {
                                 String[] lines = totalStr.split("\n");
                                 for (int j= 0;j<lines.length;j++){
                                     if (lines[j].contains(search)){
-                                        lines[j]=lines[j].substring(0,lines[j].length()-13)+ "unknown phoneme";
+                                        lines[j]=lines[j].substring(0,lines[j].length()-13)+ species +" unknown phoneme";
                                     }
                                 }
 
