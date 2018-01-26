@@ -306,7 +306,8 @@ public class PictureInFrame extends JFrame {
                                 String[] lines = totalStr.split("\n");
                                 for (int j= 0;j<lines.length;j++){
                                     if (lines[j].contains(search)){
-                                        lines[j]=lines[j].substring(0,lines[j].length()-13)+ species+ " phoneme "+NameOfPhoneme.toUpperCase();
+                                        if (species.contains(" ")){species = species.replaceAll(" ","-");}
+                                        lines[j]=lines[j].substring(0,37)+ species+ "-phoneme-"+NameOfPhoneme.toUpperCase();
                                     }
                                 }
 
@@ -381,7 +382,8 @@ public class PictureInFrame extends JFrame {
                                 String[] lines = totalStr.split("\n");
                                 for (int j= 0;j<lines.length;j++){
                                     if (lines[j].contains(search)){
-                                        lines[j]=lines[j].substring(0,lines[j].length()-13)+ species +" unknown phoneme";
+                                        if (species.contains(" ")){species = species.replaceAll(" ","-");}
+                                        lines[j]=lines[j].substring(0,37)+ species +"-unknown-phoneme";
                                     }
                                 }
 
@@ -410,6 +412,7 @@ public class PictureInFrame extends JFrame {
 
             }
 
+
             try{
                 File log2 = new File (TXTFILE2);
 
@@ -424,8 +427,9 @@ public class PictureInFrame extends JFrame {
                     }
                     String[] lines = totalStr.split("\n");
                     for (int i= 0;i<lines.length;i++){
-                        if (lines[i].contains("phoneme")){
-                            lines[i]=lines[i].substring(0,lines[i].length()-13)+ species;
+                        if (lines[i].contains(species)){
+                            if (species.contains(" ")){species = species.replaceAll(" ","-");}
+                            lines[i]=lines[i].substring(0,37)+ species;
                         }
                     }
 
